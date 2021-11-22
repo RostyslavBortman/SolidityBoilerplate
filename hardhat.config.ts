@@ -45,6 +45,10 @@ module.exports = {
     rinkeby: {
         url: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
         accounts: accountsTestnet,
+    },
+    ropsten: {
+      url: `https://ropsten.infura.io/v3/${INFURA_KEY}`,
+      accounts: accountsTestnet,
     }
   },
   etherscan: {
