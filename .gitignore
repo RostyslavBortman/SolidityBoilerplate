@@ -4,6 +4,10 @@ coverage
 coverage.json
 typechain
 build
+
 #Hardhat files
 cache
 artifacts
+
+#IDE files
+.idea
