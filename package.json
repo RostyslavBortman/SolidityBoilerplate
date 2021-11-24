@@ -23,6 +23,7 @@
     "hardhat": "^2.6.8",
     "truffle": "^5.4.21",
     "truffle-plugin-verify": "^0.5.18",
-    "ts-node": "^10.4.0"
+    "ts-node": "^10.4.0",
+    "pify": "^2.3.0"
   }
 }
