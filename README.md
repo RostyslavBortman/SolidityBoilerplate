@@ -1,4 +1,4 @@
-# Advanced Sample Hardhat Project
+#2# Advanced Sample Hardhat Project
 
 This project demonstrates an advanced Hardhat use case, integrating other tools commonly used alongside Hardhat in the ecosystem.
 
@@ -7,14 +7,18 @@ The project comes with a sample contract, a test for that contract, a sample scr
 Try running some of the following tasks:
 
 ```shell
-npx hardhat accounts
+npx hardhat accounts (not implemented)
 npx hardhat compile
 npx hardhat clean
 npx hardhat test
+(Rem for MacOS: To run tests enter in terminal:\
+export NODE_OPTIONS=--openssl-legacy-provider\
+The similar environment var need to be checked on Windows)
+
 npx hardhat node
 npx hardhat help
 REPORT_GAS=true npx hardhat test
-npx hardhat coverage
+npx hardhat coverage (not implemented)
 npx hardhat run scripts/deploy.ts
 TS_NODE_FILES=true npx ts-node scripts/deploy.ts
 npx eslint '**/*.{js,ts}'
