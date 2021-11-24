@@ -11,8 +11,8 @@ npx hardhat accounts (not implemented)
 npx hardhat compile
 npx hardhat clean
 npx hardhat test
-(Rem for MacOS: To run tests enter in terminal:\
-export NODE_OPTIONS=--openssl-legacy-provider\
+(Rem for MacOS: To run tests enter in terminal:
+    export NODE_OPTIONS=--openssl-legacy-provider
 The similar environment var need to be checked on Windows)
 
 npx hardhat node
