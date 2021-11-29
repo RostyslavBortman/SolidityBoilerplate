@@ -11,17 +11,21 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@chainlink/contracts": "^0.2.2",
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-etherscan": "^2.1.7",
     "@nomiclabs/hardhat-truffle5": "^2.0.2",
     "@nomiclabs/hardhat-web3": "^2.0.0",
+    "@openzeppelin/contracts": "^4.4.0",
     "@truffle/hdwallet-provider": "^1.7.0",
     "@types/mocha": "^9.0.0",
     "chai": "^4.3.4",
     "dotenv": "^10.0.0",
     "ethers": "^5.5.1",
     "hardhat": "^2.6.8",
+    "solidity-coverage": "^0.7.17",
     "truffle": "^5.4.21",
+    "truffle-assertions": "^0.9.2",
     "truffle-plugin-verify": "^0.5.18",
     "ts-node": "^10.4.0"
   }

@@ -7,6 +7,7 @@ import "@nomiclabs/hardhat-etherscan";
 import "@nomiclabs/hardhat-ethers";
 
 require("@nomiclabs/hardhat-web3");
+require('solidity-coverage');
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -34,8 +35,9 @@ module.exports = {
   networks: {
     hardhat: {
       forking: {
-        url: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
-        accounts: accountsTestnet
+        url: `https://eth-rinkeby.alchemyapi.io/v2/4mBmmZyRCkIQzo3F5Ue9b7GfTyVfQ2g2`,
+        accounts: accountsTestnet,
+        blockNumber: 9722579 
       }
     },
     mainnet: {
@@ -51,5 +53,9 @@ module.exports = {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
     apiKey: ETHERSCAN_API_KEY
+  },
+  mocha: {
+    timeout: 50000
   }
+
 };

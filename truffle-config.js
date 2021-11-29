@@ -62,7 +62,18 @@
        networkCheckTimeout: 1000000,  // # of blocks before a deployment times out  (minimum/default: 50)
        skipDryRun: true,
        websockets: true    
+     },
+     mainnet: {
+       provider: () => new HDWalletProvider([process.env.PRIVATE_KEY_TESTNET], "wss://mainnet.infura.io/ws/v3/" + infuraKey),
+       network_id: 1,       // Ropsten's id
+       gas: 10000000,        // Ropsten has a lower block limit than mainnet   // # of confs to wait between deployments. (default: 0)
+       timeoutBlocks: 200,
+       gasPrice: 20000000000,
+       networkCheckTimeout: 1000000,  // # of blocks before a deployment times out  (minimum/default: 50)
+       skipDryRun: true,
+       websockets: true    
      }
+     
      
      // Another network with more advanced options...
      // advanced: {
@@ -112,7 +123,7 @@
        }
      }
    },
-   plugins: ["truffle-plugin-verify"],
+   plugins: ["truffle-plugin-verify", "solidity-coverage"],
    api_keys: {
     etherscan: process.env.ETHERSCAN_API_KEY
    }
