@@ -14,18 +14,22 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const Greeter = await ethers.getContractFactory("Greeter");
-  const greeting = "Hello, Hardhat!";
-  const greeter = await Greeter.deploy(greeting);
+  const token = await ethers.getContractFactory("Olegka311");
+  const tokenName = "VikaTokenn";
+  const tokenSymbol = "vttt";
+  const deployer = await token.deploy(tokenName, tokenSymbol);
+  console.log('ad');
 
-  await greeter.deployed();
+  await deployer.deployed();
+  console.log('ad2');
 
-  await new Promise(resolve => setTimeout(resolve, 60000)); // pause 3-4 blocks for etherscan update
-
+  await new Promise(resolve => setTimeout(resolve, 600)); // pause 3-4 blocks for etherscan update
+  console.log('deployed');
+  console.log(deployer.address);
   // Verifying contract
-  await run("verify:verify", {address: greeter.address, constructorArguments: [greeting]});
+  //await run("verify:verify", {address: deployer.address, constructorArguments: [tokenName, tokenSymbol], contract: "contracts/Olegka311.sol"});
 
-  console.log("Greeter deployed and verified to:", greeter.address);
+  //console.log("Vt token is deployed and verified", deployer.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
