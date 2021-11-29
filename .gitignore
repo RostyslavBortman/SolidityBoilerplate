@@ -4,7 +4,11 @@ coverage
 coverage.json
 typechain
 build
+
 #Hardhat files
 cache
 artifacts
 .DS_Store
+
+#IDE files
+.idea
