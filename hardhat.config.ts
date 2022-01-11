@@ -49,6 +49,10 @@ module.exports = {
     ropsten: {
       url: `https://ropsten.infura.io/v3/${INFURA_KEY}`,
       accounts: accountsTestnet,
+    },
+    kovan: {
+      url: `https://kovan.infura.io/v3/${INFURA_KEY}`,
+      accounts: accountsTestnet,
     }
   },
   etherscan: {
