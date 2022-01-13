@@ -14,50 +14,46 @@ require("@nomiclabs/hardhat-web3");
 
 const {
   INFURA_KEY,
-  MNEMONIC,
   ETHERSCAN_API_KEY,
   PRIVATE_KEY,
   PRIVATE_KEY_TESTNET
 } = process.env;
 
-const accountsTestnet = PRIVATE_KEY_TESTNET
-  ? [PRIVATE_KEY_TESTNET]
-  : {mnemonic: MNEMONIC};
-
-const accountsMainnet = PRIVATE_KEY
-  ? [PRIVATE_KEY]
-  : {mnemonic: MNEMONIC};
-
 module.exports = {
-  solidity: "0.8.10",
-
+  solidity: {
+    version: "0.8.10",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200
+      },
+    },
+  },
   networks: {
     hardhat: {
       forking: {
         url: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
-        accounts: accountsTestnet
+        accounts: [PRIVATE_KEY_TESTNET]
       }
     },
     mainnet: {
-        url: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
-       // accounts: accountsMainnet,
+      url: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
+      accounts: [PRIVATE_KEY],
     },
     rinkeby: {
-        url: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
-        accounts: accountsTestnet,
+      url: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
+      accounts: [PRIVATE_KEY_TESTNET]
     },
     ropsten: {
       url: `https://ropsten.infura.io/v3/${INFURA_KEY}`,
-      accounts: accountsTestnet,
+        accounts: [PRIVATE_KEY_TESTNET]
     },
     kovan: {
       url: `https://kovan.infura.io/v3/${INFURA_KEY}`,
-      accounts: accountsTestnet,
+      accounts: [PRIVATE_KEY_TESTNET]
     }
   },
   etherscan: {
-    // Your API key for Etherscan
-    // Obtain one at https://etherscan.io/
     apiKey: ETHERSCAN_API_KEY
   }
 };
